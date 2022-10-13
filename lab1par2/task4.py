@@ -6,21 +6,37 @@ class FileHandler:
         except:
             raise FileNotFoundError("File not found")
 
-
     def count_char(self):
-        return len(self.file.read())
+        count = 0
+        for line in self.file:
+            count += len(line)
+        return count
 
     def count_words(self):
-        return len(self.file.read().split())
+        count = 0
+        for line in self.file:
+            count += len(line.split())
+        return count
 
     def count_sentences(self):
-        return len(self.file.read().split("."))
+        count = 0
+        for line in self.file:
+            count += len(line.split('.'))
+        return count
 
     def count_strings(self):
-        return len(self.file.read().split("\n"))
+        count = 0
+        for line in file:
+            count += 1
+        return count
 
     def count_special(self, char):
-        return self.file.read().count(char)
+        count = 0
+        for line in self.file:
+            for ch in line:
+                if char == ch:
+                    count += 1
+        return count
 
 
 handler = FileHandler("4task4")
