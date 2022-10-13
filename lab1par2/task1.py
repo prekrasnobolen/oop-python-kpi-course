@@ -1,7 +1,7 @@
 class Rectangle:
-    def __init__(self):
-        self.height = 1
-        self.width = 1
+   def __init__(self, height=1, width=1):
+        self.setHeight(height)
+        self.setWidth(width)
 
     def setHeight(self, value):
         if isinstance(value, float):
