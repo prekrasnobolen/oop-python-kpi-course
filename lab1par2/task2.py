@@ -13,26 +13,23 @@ def find_lcm(x, y):
 
 class Rational:
     def __init__(self, numerator, denominator):
-        if isinstance(numerator, int):
-            if isinstance(denominator, int):
-                if denominator != 0:
-                    i = 2
-                    while True:
-                        if i > denominator/2:
-                            break
-                        if denominator % i == 0 and numerator % i == 0:
-                            numerator /= i
-                            denominator /= i
-                            i -= 1
-                        i += 1
-                    self.numerator = numerator
-                    self.denominator = denominator
-                else:
-                    raise ZeroDivisionError("ZeroDivisionError")
-            else:
-                raise TypeError("Denominator : type error")
-        else:
+ if not isinstance(numerator, int):
             raise TypeError("Numerator type error")
+        if not isinstance(denominator, int):
+            raise TypeError("Denominator : type error")
+        if denominator == 0:
+            raise ZeroDivisionError("ZeroDivisionError")
+        i = 2
+        while True:
+            if i > denominator/2:
+                break
+            if denominator % i == 0 and numerator % i == 0:
+                numerator /= i
+                denominator /= i
+                i -= 1
+            i += 1
+        self.numerator = numerator
+        self.denominator = denominator
 
     def get_num(self):
         return self.numerator
