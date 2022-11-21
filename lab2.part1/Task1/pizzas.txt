@@ -1,0 +1,7 @@
+1:Margarita
+2:Quadro formaggi
+3:Capricciosa
+4:Hawaiian
+5:Calzone
+6:Bavarian
+7:Ukrainian
